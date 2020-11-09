@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', 'App\Http\Controllers\HelloController@index');
+Route::get('hello/{name?}', 'App\Http\Controllers\HelloController@index');
 Route::get('test', 'App\Http\Controllers\TestController@index');
+Route::get('hey', 'App\Http\Controllers\HeyController@index');
 

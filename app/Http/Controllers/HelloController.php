@@ -6,18 +6,12 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function index()
+    public function index($name = 'No Name')
     {
-        return <<<EOF
-        <html>
-            <head>
-                <title>hello/index</title>
-            </head>
-            <body>
-                <h1>Index</h1>
-                <p>This is HelloController action index</p>
-            </body>
-        </html>
-        EOF;
+        $data = [
+            'msg' => 'This is a message from HelloController',
+            'name' => $name
+        ];
+        return view('hello.index', $data);
     }
 }
